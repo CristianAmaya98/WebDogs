@@ -114,6 +114,9 @@ a {
     color: var(--gris);
 }
 
+.text-center {
+    text-align: center;
+}
 
 
 /** Header **/
@@ -250,7 +253,161 @@ a {
     text-transform: uppercase;
 }
 
-/** Section Help **/
+
+/** SECTION OUR PROCESS **/
+.section-our-process {
+    background-color: #F2F4FD;
+    padding: calc(var(--separacion) * 1) 0;
+}
+
+.listado-process {
+    margin: var(--separacion) 0;
+}
+
+@media (min-width: 768px) {
+    .listado-process {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.item-proces {
+    padding: 2rem;
+    color: var(--blanco);
+    text-align: center;
+}
+
+.item-proces .proces-imagen {
+    width: 40%;
+    margin: 0 auto;
+    background-color: var(--bgBlanco);
+    padding: 1.5rem;
+    border-radius: 50%;
+}
+
+.item-proces:nth-child(1) {
+    background-color: #0090B1;
+}
+
+.item-proces:first-of-type {
+    border-top-left-radius: 4rem;
+    border-top-right-radius: 4rem;
+}
+
+@media (min-width: 768px) {
+    .item-proces:first-of-type {
+        border-top-left-radius: 4rem;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 4rem;
+    }
+}
+
+.item-proces:last-of-type {
+    border-bottom-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+}
+
+@media (min-width: 768px) {
+    .item-proces:last-of-type {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 4rem;
+        border-top-right-radius: 4rem;
+    }
+}
+
+.item-proces:nth-child(2) {
+    background-color: #00ACC1;
+}
+
+.item-proces:nth-child(3) {
+    background-color: #2BC4D1;
+}
+
+.item-proces:nth-child(4) {
+    background-color: #32D8D5;
+}
+
+.proces-texto h3 {
+    margin: 1rem;
+}
+
+/** SECTION ADOPCION **/
+.section-adopcion {
+    padding: var(--separacion) 0;
+}
+
+@media (min-width: 768px) {
+    .listado-animales {
+        margin: var(--separacion) 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.canino {
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
+    border-radius: 1rem;
+    margin-bottom: 4rem;
+}
+
+.header-canino {
+    position: relative;
+}
+
+.imagen-canino img {
+    object-fit: cover;
+    min-height: 30rem;
+}
+
+.info-data-canino {
+    background-color: #37386E;
+    padding: 1rem;
+    text-align: center;
+    color: var(--blanco);
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.body-canino {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.body-canino h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.body-canino p {
+    text-align: center;
+    font-weight: 400;
+}
+
+
+.btn-adopcion {
+    width: 50%;
+    display: block;
+    color: var(--negro);
+    border: 1px solid var(--gris);
+    border-radius: 2rem;
+    padding: 1rem;
+    text-align: center;
+    transition-property: color, background-color;
+    transition-duration: 300ms;
+}
+
+.btn-adopcion:hover {
+    color: var(--blanco);
+    background-color: var(--negro);
+}
+
+/** SECTION HELP **/
 
 .section-help {
     background-image: linear-gradient(to bottom, var(--bgPrimario) 50%, var(--bgSecundario) 100%);
@@ -290,6 +447,7 @@ a {
     grid-template-columns: 1fr;
     border: .2rem solid var(--bgBlanco);
     border-radius: 2rem;
+    overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -316,10 +474,19 @@ a {
 
 
 .input input[type="submit"] {
-    border-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
+}
+
+
+@media (min-width: 768px) {
+    .input input[type="submit"] {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 2rem;
+    }
 }
 
 
@@ -362,6 +529,11 @@ a {
     margin-bottom: calc(var(--separacion) / 2);
 }
 
+.card-texto h3 {
+    margin: 0;
+}
+
+
 @media (min-width: 768px) {
     .listado-items .card.item {
         display: flex;
@@ -381,9 +553,7 @@ a {
         padding-left: 3rem;
     }
 
-    .card-texto h3 {
-        margin: 0;
-    }
+
 
     .card-texto p {
         text-align: left;
